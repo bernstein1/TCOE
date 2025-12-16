@@ -1,0 +1,33 @@
+{
+  "name": "touchcare-platform",
+  "version": "1.0.0",
+  "description": "TouchCare Employee Benefits Decision Support Platform",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "admin",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev:frontend\" \"npm:dev:backend\"",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "vercel dev",
+    "dev:admin": "npm run dev --workspace=admin",
+    "build": "npm run build --workspaces",
+    "deploy": "vercel --prod",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "db:migrate": "npm run migrate --workspace=backend",
+    "db:seed": "npm run seed --workspace=backend",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vercel": "^33.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
