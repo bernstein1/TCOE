@@ -84,8 +84,8 @@ export default function Plans() {
                 </td>
                 <td className="py-4 px-6">
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${plan.is_active
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-gray-100 text-gray-600'
+                    ? 'bg-green-100 text-green-700'
+                    : 'bg-gray-100 text-gray-600'
                     }`}>
                     {plan.is_active ? 'Active' : 'Draft'}
                   </span>
@@ -116,9 +116,11 @@ export default function Plans() {
         </table>
       </div>
 
+      <AddPlanModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        onSuccess={fetchPlans}
+      />
     </div>
   )
-}
-    </div >
-  );
 }
