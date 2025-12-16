@@ -29,7 +29,7 @@ export default function CollaborationModal({ isOpen, onClose }: CollaborationMod
     onSpouseJoined: () => {
       // Could show a toast notification here
     },
-    onComparisonReady: (_results) => {
+    onComparisonReady: (_results: any) => {
       // Handle comparison results
     },
   });
@@ -110,21 +110,19 @@ export default function CollaborationModal({ isOpen, onClose }: CollaborationMod
                 <div className="flex gap-2 mb-6">
                   <button
                     onClick={() => setMode('create')}
-                    className={`flex-1 py-2 rounded-xl font-medium transition-colors ${
-                      mode === 'create'
+                    className={`flex-1 py-2 rounded-xl font-medium transition-colors ${mode === 'create'
                         ? 'bg-primary-100 text-primary-700'
                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    }`}
+                      }`}
                   >
                     Start New
                   </button>
                   <button
                     onClick={() => setMode('join')}
-                    className={`flex-1 py-2 rounded-xl font-medium transition-colors ${
-                      mode === 'join'
+                    className={`flex-1 py-2 rounded-xl font-medium transition-colors ${mode === 'join'
                         ? 'bg-primary-100 text-primary-700'
                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    }`}
+                      }`}
                   >
                     Join Existing
                   </button>
@@ -237,11 +235,10 @@ export default function CollaborationModal({ isOpen, onClose }: CollaborationMod
                     {comparisonResults.scenarios.map((scenario: any, i: number) => (
                       <div
                         key={i}
-                        className={`p-4 rounded-xl border-2 ${
-                          scenario.isBest
+                        className={`p-4 rounded-xl border-2 ${scenario.isBest
                             ? 'border-primary-500 bg-primary-50'
                             : 'border-gray-200'
-                        }`}
+                          }`}
                       >
                         <div className="flex justify-between items-center">
                           <div>
