@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host --port 3000",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && mkdir -p ../dist && cp -r dist/* ../dist/",
     "preview": "vite preview",
     "lint": "eslint src/**/*.{ts,tsx}",
     "test": "vitest"
